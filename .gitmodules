@@ -1,3 +1,12 @@
 [submodule "gis"]
 	path = gis
 	url = https://github.com/sjohandup/SE_BroadSword-GIS
+[submodule "data"]
+	path = data
+	url = https://github.com/lyle-univ/cos301-broadsword-data
+[submodule "users"]
+	path = users
+	url = https://github.com/TheZimbo16/COS301-Broadsword-Users
+[submodule "navigation"]
+	path = navigation
+	url = https://github.com/AndriesJacobus/COS301Phase3BroadswordNavigation
