@@ -1,0 +1,3 @@
+[submodule "gis"]
+	path = gis
+	url = https://github.com/sjohandup/SE_BroadSword-GIS
