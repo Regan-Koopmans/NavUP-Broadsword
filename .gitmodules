@@ -13,3 +13,6 @@
 [submodule "access"]
 	path = access
 	url = https://github.com/KeatonPennels/COS-301-Broadsword-Access
+[submodule "notification"]
+	path = notification
+	url = https://github.com/wanrick/bsword-notification
