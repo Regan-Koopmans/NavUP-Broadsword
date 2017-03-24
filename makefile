@@ -21,3 +21,7 @@ kill-comms:
 	@killall nsqlookupd
 	@killall nsqd
 	@killall nsqadmin
+
+listen-users:
+	@nsq_to_file --output-dir="/tmp" --topic=users --lookupd-http-address="localhost:4161"
+
