@@ -1,0 +1,8 @@
+#!/bin/bash
+filename="$1"
+t="navigate"
+while read -r line
+do
+	name="$line"
+	curl -i localhost:8000 -X POST -d '{"message": "Jy is tog slim", "userID": "'$name'", "noticeType": "IMPORTANT"}'
+done <"$filename"
