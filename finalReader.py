@@ -19,7 +19,7 @@ client = MongoClient(uri)
 db = client.userDB
 writer = nsq.Writer(['127.0.0.1:4150'])
 def requestHandler(message):
-	
+    print(message.body)
     try:
         obj = json.loads(message.body)
 	message.enable_async()	
@@ -69,9 +69,13 @@ def requestHandler(message):
 def pub_message(request):
     print(request)
     writer.pub('Notification', str(request), finish_pub)
+    return True
+
 def finish_pub(conn, data):
     print(data)
     tornado.ioloop.IOLoop.current().stop()
+    return True
+
 ######################################### Function to insert data into mongo db#######################################
 def insertOne(UserName, UserSurname, Email, Password, StudentNumber, Phone):
     try:

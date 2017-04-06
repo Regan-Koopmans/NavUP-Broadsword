@@ -21,3 +21,4 @@ kill-comms:
 	@killall nsqlookupd
 	@killall nsqd
 	@killall nsqadmin
+	@rm *.dat
