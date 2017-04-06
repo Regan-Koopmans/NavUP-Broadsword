@@ -34,6 +34,7 @@ def handler(message):
     msgtype = "response"
     content = location
     m=publish(dest, src, msgtype, content)
+    print("Returning " + location + " to Navigation")
     tornado.ioloop.PeriodicCallback(pub_message(m), 1000).start()
   return True
 
