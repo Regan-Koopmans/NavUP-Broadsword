@@ -1,4 +1,5 @@
 # NavUP - Broadsword
+A repository for the complete Broadsword implementation of NavUP
 
 ## NavUP
 NavUP, at its core, is a navigational service application that is used to navigate in and around buildings of the Hatfield campus of the University of Pretoria.
