@@ -25,9 +25,9 @@ kill-comms:
 
 start:
 	@make test-comms &
-	@python notification/notificationModule.py > notif.log &
+	@python notification/notificationModule.py &
 	@python finalReader.py > users.log &
-	@node access/Nav\ UP/navUPServer.js 4000 > access.log &
+	@node access/Nav\ UP/navUPServer.js 80 &
 	
 test-data:
 	@echo "Sending test GIS message to Data" &
@@ -40,3 +40,20 @@ stop:
 	@make kill-comms
 	@killall python
 	@killall node
+
+stop-clean:
+	make stop
+	rm *.dat
+	rm *.bad
+	rm *.log
+
+docs:
+	@echo "Compiling documentation..."
+	@mkdir -p documentation
+	@pdflatex -output-directory documentation NavUP.tex
+	@pdflatex -output-directory documentation NavUP.tex
+
+clean:
+	rm *.log
+	rm *.dat
+	rm *.bad
