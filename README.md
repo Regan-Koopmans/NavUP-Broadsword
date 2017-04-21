@@ -52,7 +52,7 @@ MongoDB was the database of choice due to some of its favourable, NoSQL characte
 ![NavUP - Broadsword project structure](https://raw.githubusercontent.com/Regan-Koopmans/NavUP-Broadsword/master/integration_structure.png)
 
 ## Documentation
-NSQ, a distributed messaging platfrom service, has been decided upon as the communication medium of choice between the various modules of the Broadsword stream. Subsequently, this means that all requests and responses are to be sent in the form of messages, therefore, an agreed upon and unified API is required. To that extent, we have produced some documentation on how we perceive communications ought to transpire between modules. Moreover, we have recommended a set of coding standards in order to manage consistency accross the various modules.
+NSQ, a distributed messaging platfrom service, has been decided upon as the communication medium of choice between the various modules of the Broadsword stream. Subsequently, this means that all requests and responses are to be sent in the form of messages, therefore, an agreed upon and unified API is required. To that extent, we have produced some documentation on how we perceive communications ought to transpire between modules. Moreover, we have recommended a set of coding standards in order to manage consistency across the various modules.
 
 * [Communication Specification](https://paper.dropbox.com/doc/NavUP-Communications-Spec-sKIJzzByzxeo3LYm6oGld)
 * [Connecting to the NSQ Messaging Platform](https://paper.dropbox.com/doc/Connecting-to-the-NSQ-Messaging-Platform-xMqpYCREAg3mKOuWPU1Z9)
