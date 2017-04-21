@@ -25,6 +25,32 @@ The development of the NavUP application has been broken up into several differe
 * Python
 * [NSQ Messaging Service](http://nsq.io/overview/design.html)
 
+### Reasoning
+NSQ was chosen as a communication medium due to several appealing charactersitics, which include but are not limited to:
+
+* small messaging platform that requires no build time
+* supported with several official client libraries (including Python and NodeJS clients)
+* horizontally scalable (no brokers, seamlessly add more nodes to the cluster)
+* low-latency push based message delivery (performance)
+* combination load-balanced and multicast style message routing
+* excel at both streaming (high-throughput) and job oriented (low-throughput) workloads
+* primarily in-memory (beyond a high-water mark messages are transparently kept on disk)
+* runtime discovery service for consumers to find producers (nsqlookupd)
+* transport layer security (TLS)
+* data format agnostic
+* few dependencies (easy to deploy) and a sane, bounded, default configuration
+* simple TCP protocol supporting client libraries in any language
+* HTTP interface for stats, admin actions, and producers (no client library needed to publish)
+* integrates with statsd for realtime instrumentation
+* robust cluster administration interface (nsqadmin)
+
+Python and NodeJS were chosen due to them being scripting languages, which means near-zero build times and work on multiple platforms. Additionally, both have extensive support in terms libraries and otherwise.
+
+MongoDB was the database of choice due to some of its favourable, NoSQL characteristics. It performs well with large volumes of structured, semi-structured, and unstructured data. Moreover, it implements object-oriented programming that is easy to use and flexible as well as the fact that it boasts an efficient, scale-out architecture instead of an expensive, monolithic architecture.
+
+## Project Structure
+![NavUP - Broadsword project structure](https://drive.google.com/a/tuks.co.za/file/d/0B0X7LAT95kEQR0xxVVRQRkpVOUE/view?usp=sharing)https://lh3.googleusercontent.com/5DcOLsh3xporBWjwqprB9k2wd1aOVCKz5eS-FQkL7iDe7NCo7JFYcP4U_3NerqujXvRdgGLBw9kKiMg=w1366-h659
+
 ## Documentation
 NSQ, a distributed messaging platfrom service, has been decided upon as the communication medium of choice between the various modules of the Broadsword stream. Subsequently, this means that all requests and responses are to be sent in the form of messages, therefore, an agreed upon and unified API is required. To that extent, we have produced some documentation on how we perceive communications ought to transpire between modules. Moreover, we have recommended a set of coding standards in order to manage consistency accross the various modules.
 
