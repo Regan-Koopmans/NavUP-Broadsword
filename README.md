@@ -26,7 +26,7 @@ The development of the NavUP application has been broken up into several differe
 * [NSQ Messaging Service](http://nsq.io/overview/design.html)
 
 ### Reasoning
-NSQ was chosen as a communication medium due to several appealing charactersitics, which include but are not limited to:
+NSQ was chosen as a communication medium due to several appealing characteristics, which include but are not limited to:
 
 * small messaging platform that requires no build time
 * supported with several official client libraries (including Python and NodeJS clients)
@@ -52,7 +52,7 @@ MongoDB was the database of choice due to some of its favourable, NoSQL characte
 ![NavUP - Broadsword project structure](https://raw.githubusercontent.com/Regan-Koopmans/NavUP-Broadsword/master/integration_structure.png)
 
 ## Documentation
-NSQ, a distributed messaging platfrom service, has been decided upon as the communication medium of choice between the various modules of the Broadsword stream. Subsequently, this means that all requests and responses are to be sent in the form of messages, therefore, an agreed upon and unified API is required. To that extent, we have produced some documentation on how we perceive communications ought to transpire between modules. Moreover, we have recommended a set of coding standards in order to manage consistency across the various modules.
+NSQ, a distributed messaging platform service, has been decided upon as the communication medium of choice between the various modules of the Broadsword stream. Subsequently, this means that all requests and responses are to be sent in the form of messages, therefore, an agreed upon and unified API is required. To that extent, we have produced some documentation on how we perceive communications ought to transpire between modules. Moreover, we have recommended a set of coding standards in order to manage consistency across the various modules.
 
 * [Communication Specification](https://paper.dropbox.com/doc/NavUP-Communications-Spec-sKIJzzByzxeo3LYm6oGld)
 * [Connecting to the NSQ Messaging Platform](https://paper.dropbox.com/doc/Connecting-to-the-NSQ-Messaging-Platform-xMqpYCREAg3mKOuWPU1Z9)
