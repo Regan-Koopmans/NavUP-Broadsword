@@ -49,7 +49,7 @@ Python and NodeJS were chosen due to them being scripting languages, which means
 MongoDB was the database of choice due to some of its favourable, NoSQL characteristics. It performs well with large volumes of structured, semi-structured, and unstructured data. Moreover, it implements object-oriented programming that is easy to use and flexible as well as the fact that it boasts an efficient, scale-out architecture instead of an expensive, monolithic architecture.
 
 ## Project Structure
-![NavUP - Broadsword project structure](https://drive.google.com/a/tuks.co.za/file/d/0B0X7LAT95kEQR0xxVVRQRkpVOUE/view?usp=sharing)https://lh3.googleusercontent.com/5DcOLsh3xporBWjwqprB9k2wd1aOVCKz5eS-FQkL7iDe7NCo7JFYcP4U_3NerqujXvRdgGLBw9kKiMg=w1366-h659
+![NavUP - Broadsword project structure](https://lh3.googleusercontent.com/5DcOLsh3xporBWjwqprB9k2wd1aOVCKz5eS-FQkL7iDe7NCo7JFYcP4U_3NerqujXvRdgGLBw9kKiMg=w1366-h659)
 
 ## Documentation
 NSQ, a distributed messaging platfrom service, has been decided upon as the communication medium of choice between the various modules of the Broadsword stream. Subsequently, this means that all requests and responses are to be sent in the form of messages, therefore, an agreed upon and unified API is required. To that extent, we have produced some documentation on how we perceive communications ought to transpire between modules. Moreover, we have recommended a set of coding standards in order to manage consistency accross the various modules.
