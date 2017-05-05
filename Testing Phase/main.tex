@@ -54,4 +54,77 @@ of 10 000 \texttt{HTTP} requests and responded, on all occasions, with the exact
 number of responses everytime the script was executed. As a result, we graded
 the \texttt{GladiOS} functional requirement of integration 10 points (out of 10).
 
+\subsection{Security}
+
+When performing nmap, we see that three ports are open. These ports include port
+3306 (used by MySQL) and port 8888 (used by the \texttt{GladiOS} Java web server),
+however, the most notable of the three is port 22, which is used for SSH
+(Secure Shell).
+\\\\
+With knowledge of all the open ports on the \texttt{GladiOS} server, we focused on port
+22 and therefore attempted to break into their server over SSH by using a
+program called Hydra to brute force their password. We were,
+however, unable to obtain the password in this manner, which seems to suggest
+that the \texttt{GladiOS} team chose a password that was significantly secure enough to
+prevent an easy brute-force attack.
+\\\\
+However, while we were unable to gain entry into the server in this manner,
+leaving port 22 open is still a vulnerability, a potentially major one at that.
+An attacker would, of course, require the correct SSH details in order to
+exploit the server. While an attacker would not be able to determine such
+information from the server directly in any way, it is conceivable that a
+machine that is remotely accessing the server via SSH may be compromised. Via
+such a compromised machine, an attacker could determine the required details
+for SSH. If an attacker was able to gain access to the server through SSH, then
+the server would indeed be at the mercy of an attacker, however unlikely the
+chances are that such attacker is successful in determining the required SSH
+details. We therefore consider this a significant security threat.
+\\\\
+In general, there are very few potential points of entry to the \texttt{GladiOS} server,
+which is beneficial from security perspective as there are less points of attack
+for attackers. From a security standpoint, the \texttt{GladiOS} server does not expose
+any serious security breaches and is ultimately quite secure. Based on the
+aforementioned reasoning we graded the \texttt{GladiOS} security 9 points (out of 10).
+
+\begin{figure}[!ht]
+	\includegraphics[width=\textwidth]{image.png}
+	\caption{\texttt{nmap} on the GladiOS server}
+	\label{}
+\end{figure}
+
+\subsection{Performance}
+
+We initially ran response tests in what we considered to be the "ideal
+conditions" for the server. Concretely, this was making a handful of requests to
+the server, from the server itself, while no other machines were making
+requests. In these conditions, we received  an average of 0.01625 seconds to
+service our minimal request, which we considered to be good performace. Another
+request, one in which a default user was registered, took roughly 2.5 seconds to
+ service in ideal conditions, which we consider to be quite slow.
+\\\\
+Our main performance test involved attempting a Distributed Denial of Service
+Attack (\texttt{DDoS}) using a script that made repeated requests. We performed this on
+43 computers, each running the script twice, one on each thread. This means a
+total of 86 logical agents that were each making requests as fast as possible.
+\\\\
+The outcome of the load we consequently placed on the server was a significantly
+reduced response time, and periodically refused connections from the server.
+Specifically an average response was increased to 1.33 seconds, which is two
+orders of magnitude slower than it was before. Even in optimistic predictions,
+we can say that the server would not be able to service any more than 860
+requests at any given time, and respond to all of them performantly. The server
+did not, however, become fully unresponsive or crash at any time. We were,
+overall, impressed by how the \texttt{GladiOS} server fared, and we feel that it's
+limitations came rather from hardware than the architecture of their software.
+\\\\
+For the reasons specified above, we give the \texttt{GladiOS} Integration team a score of
+ 9 points (out of 10) for performance. After 86 concurrent requests, the server
+ could no longer guarantee performant response times.
+
+ \begin{figure}[!ht]
+ 	\includegraphics[width=\textwidth]{image2.png}
+ 	\caption{An example run of the load testing script (no timers).}
+ 	\label{}
+ \end{figure}
+
 \end{document}
