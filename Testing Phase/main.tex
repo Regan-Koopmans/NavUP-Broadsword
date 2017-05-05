@@ -1,0 +1,28 @@
+\documentclass[12pt,a4paper,titlepage]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\author{\textit{Broadsword Integration} \\\\
+				Marthinus Hermann, 15081479\\
+				Regan Koopmans, 15043143 \\
+				Jan-Justin van Tonder, 15073298}
+\title{\fontsize{40}{40} Integration Testing Report}
+\begin{document}
+\maketitle
+
+\section{Summary of Testing Methods}
+
+\begin{itemize}
+	\item We wrote three bash scripts that drove the majority of the performance testing. We combined these scripts in different orders to primarily generate:
+	   \begin{itemize}
+			 \item Average response times for particular \texttt{HTTP} requests, performed using the curl utility.
+		   \item Load testing, in which we distributed the scripts across physical computers to attempt to emulate a typical usage environment. For this we used the majority of the SIT lab in the Informatorium.
+	   \end{itemize}
+	\item We used the networking utility \texttt{nmap} to determine open ports and other network vulnerabilities.
+	\item We used the software Hydra to attempt to brute-force their \texttt{SSH} password.
+\end{itemize}
+
+\end{document}
