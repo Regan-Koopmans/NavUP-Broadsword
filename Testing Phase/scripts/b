@@ -1,0 +1,6 @@
+#!/bin/bash 
+chmod +rwx a
+gnome-terminal -e "bash -c \"./a $1; exec bash\"" &
+gnome-terminal -e "bash -c \"./a $2; exec bash\""
+	
+	

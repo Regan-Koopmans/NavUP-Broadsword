@@ -1,0 +1,36 @@
+#!/bin/bash 
+chmod +rwx a
+COUNTER2=0
+d=0
+avg=0
+	while [  $COUNTER2 -lt 1 ]; do
+	
+		COUNTER=0
+		runtime=0
+		
+		start=$(date +%s.%N)
+			 while [  true ]; do
+			     let COUNTER=COUNTER+1
+				./script.sh $1
+			done
+			
+			end=$(date +%s.%N)    
+
+			runtime=$(awk "BEGIN {printf \"%.8f\",${end}-${start}}")
+			avg=$(awk "BEGIN {printf \"%.8f\",$avg+$runtime/10}")
+		echo "Runtime was $runtime"
+
+		if [ $COUNTER2 -eq 0 ]
+		then
+			d=$(awk "BEGIN {printf \"%.8f\",${end}-${start}}")
+		else
+			d=$(awk "BEGIN {if ($runtime<$d)  printf \"%.8f\",${runtime};else printf \"%.8f\",${d}}")
+		fi
+		
+		let COUNTER2=COUNTER2+1
+	done
+	
+	echo "$d"
+	echo "$avg"
+	
+	
